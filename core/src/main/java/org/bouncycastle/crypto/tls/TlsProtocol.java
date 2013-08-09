@@ -788,7 +788,7 @@ public abstract class TlsProtocol
         throws IOException
     {
         short maxFragmentLength = TlsExtensionsUtils.getMaxFragmentLengthExtension(serverExtensions);
-        if (maxFragmentLength >= 0 && !this.resumedSession)
+        if (maxFragmentLength > 0 && !this.resumedSession)
         {
             if (maxFragmentLength != TlsExtensionsUtils.getMaxFragmentLengthExtension(clientExtensions))
             {

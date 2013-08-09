@@ -710,7 +710,7 @@ public class TlsServerProtocol
             writeExtensions(message, this.serverExtensions);
         }
 
-        if (this.securityParameters.maxFragmentLength >= 0)
+        if (this.securityParameters.maxFragmentLength > 0)
         {
             int plainTextLimit = 1 << (8 + this.securityParameters.maxFragmentLength);
             recordStream.setPlaintextLimit(plainTextLimit);

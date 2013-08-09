@@ -234,7 +234,7 @@ public class TlsClientProtocol
                 receiveServerHelloMessage(buf);
                 this.connection_state = CS_SERVER_HELLO;
 
-                if (this.securityParameters.maxFragmentLength >= 0)
+                if (this.securityParameters.maxFragmentLength > 0)
                 {
                     int plainTextLimit = 1 << (8 + this.securityParameters.maxFragmentLength);
                     recordStream.setPlaintextLimit(plainTextLimit);

@@ -225,7 +225,7 @@ public abstract class AbstractTlsServer
     public Hashtable getServerExtensions()
         throws IOException
     {
-        if (this.maxFragmentLengthOffered >= 0)
+        if (this.maxFragmentLengthOffered > 0)
         {
             TlsExtensionsUtils.addMaxFragmentLengthExtension(checkServerExtensions(), this.maxFragmentLengthOffered);
         }
